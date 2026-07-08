@@ -1,0 +1,133 @@
+# ============================================================
+# .gitignore — Tránsito y Seguridad Vial | H. Ayuntamiento de Tecámac
+# Sitio web estático: HTML + CSS + JS Vanilla
+# ============================================================
+
+# ------------------------------------------------------------
+# Sistema Operativo: Windows
+# ------------------------------------------------------------
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# Sistema Operativo: macOS (por si alguien colabora desde Mac)
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Sistema Operativo: Linux
+*~
+.directory
+
+# ------------------------------------------------------------
+# Editores e IDEs
+# ------------------------------------------------------------
+
+# VS Code / Kiro
+.vscode/
+!.vscode/extensions.json
+
+# JetBrains (WebStorm, etc.)
+.idea/
+*.iml
+*.iws
+
+# Sublime Text
+*.sublime-workspace
+*.sublime-project
+
+# Vim / Neovim
+*.swp
+*.swo
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+Session.vim
+
+# Emacs
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+
+# ------------------------------------------------------------
+# Archivos temporales y de log
+# ------------------------------------------------------------
+*.log
+*.tmp
+*.temp
+*.bak
+*.backup
+*.orig
+*.cache
+
+# ------------------------------------------------------------
+# Documentos de trabajo (no pertenecen al repositorio del sitio)
+# ------------------------------------------------------------
+
+# Memoria de Trabajo Profesional y borradores
+*.docx
+*.doc
+*.pdf
+*.pptx
+*.ppt
+*.xlsx
+*.xls
+
+# Capturas de pantalla y evidencia gráfica de trabajo
+# (mantener solo las imágenes del sitio en assets/)
+# Si tienes imágenes del sitio en assets/, NO las ignores.
+# Solo ignoramos capturas sueltas en la raíz:
+screenshots/
+evidencia/
+borradores/
+notas/
+
+# ------------------------------------------------------------
+# Archivos de entorno y configuración local (seguridad)
+# ------------------------------------------------------------
+.env
+.env.local
+.env.*.local
+*.env
+config.local.js
+secrets.js
+
+# ------------------------------------------------------------
+# Dependencias (por si en el futuro se agrega alguna herramienta)
+# ------------------------------------------------------------
+node_modules/
+vendor/
+bower_components/
+
+# Archivos de empaquetado si se agrega un bundler
+dist/
+build/
+.parcel-cache/
+.cache/
+
+# ------------------------------------------------------------
+# Archivos comprimidos
+# ------------------------------------------------------------
+*.zip
+*.rar
+*.7z
+*.tar
+*.gz
+
+# ------------------------------------------------------------
+# Lo que SÍ debe subir al repositorio (referencia)
+# ------------------------------------------------------------
+# ✔ index.html
+# ✔ estilos.css
+# ✔ scripts.js
+# ✔ assets/images/  (imágenes del sitio)
+# ✔ assets/docs/    (formatos PDF descargables para ciudadanos)
+# ✔ README.md
+# ✔ .gitignore
