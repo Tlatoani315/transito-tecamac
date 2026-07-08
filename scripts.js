@@ -330,26 +330,20 @@ function validateForm(form) {
 }
 
 /**
- * Serializa los datos del formulario para enviarlos a Netlify
- * usando application/x-www-form-urlencoded (requerido por Netlify Forms).
- * @param {HTMLFormElement} form
- * @returns {string}
- */
-function serializeFormData(form) {
-  return new URLSearchParams(new FormData(form)).toString();
-}
-
-/**
  * Envía el formulario a Netlify Forms via fetch (sin recarga de página).
- * Netlify requiere el header Content-Type correcto y el campo `form-name`.
+ * - El body debe ser application/x-www-form-urlencoded.
+ * - El campo `form-name` le indica a Netlify a qué formulario pertenece.
+ * - Se envía a la ruta raíz '/'; Netlify intercepta el POST antes de servir el HTML.
  * @param {HTMLFormElement} form
  * @returns {Promise<Response>}
  */
 function submitToNetlify(form) {
+  const data = new URLSearchParams(new FormData(form));
+
   return fetch('/', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: serializeFormData(form),
+    body: data.toString(),
   });
 }
 
