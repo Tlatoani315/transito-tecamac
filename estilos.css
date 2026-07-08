@@ -943,6 +943,11 @@ button {
   font-size: var(--font-size-sm);
 }
 
+/* El atributo hidden tiene menor especificidad que display:flex — lo forzamos */
+.form-success[hidden] {
+  display: none;
+}
+
 .form-success > i { font-size: 1.3rem; }
 
 /* Error de red / servidor */
@@ -954,6 +959,10 @@ button {
   color: var(--color-error);
   font-size: var(--font-size-sm);
   font-weight: 600;
+}
+
+.form-network-error[hidden] {
+  display: none;
 }
 
 
