@@ -383,6 +383,18 @@ button {
   margin-bottom: var(--space-md);
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.hero-badge:hover,
+.hero-badge:focus-visible {
+  background-color: rgba(255, 255, 255, 0.28);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-1px);
+  outline: 2px solid rgba(255, 255, 255, 0.6);
+  outline-offset: 2px;
 }
 
 .hero-title {
@@ -1331,24 +1343,32 @@ button {
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .map-wrap iframe {
   display: block;
   width: 100%;
-  height: 380px;
+  height: 250px;
   border: none;
-  border-radius: 16px;
+  border-radius: 16px 16px 0 0;
 }
 
 /* Botón "Abrir en Google Maps" debajo del mapa */
 .map-cta {
-  align-self: center;
-  gap: var(--space-xs);
+  align-self: stretch;
+  justify-content: center;
+  border-radius: 0 0 16px 16px;
+  margin-top: -4px;
 }
 
 @media (max-width: 767px) {
+  .map-wrap {
+    max-width: 100%;
+  }
   .map-wrap iframe {
-    height: 260px;
+    height: 200px;
   }
 }
