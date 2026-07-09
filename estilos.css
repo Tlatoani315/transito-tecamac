@@ -1289,3 +1289,66 @@ button {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+/* ------------------------------------------------------------- */
+/* 21. BOTÓN MAPS Y MAPA EMBEBIDO                                 */
+/* ------------------------------------------------------------- */
+
+/* Botón de dirección clickeable dentro del contact-info */
+.btn-maps {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: var(--space-xs);
+  margin-top: 0.25rem;
+  font-size: var(--font-size-sm);
+  color: var(--color-secondary);
+  text-decoration: none;
+  line-height: 1.4;
+  transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+.btn-maps i {
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+  font-size: 1rem;
+}
+
+.btn-maps:hover,
+.btn-maps:focus-visible {
+  color: var(--color-white);
+  text-decoration: underline;
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Contenedor del mapa embebido */
+.map-wrap {
+  margin-top: var(--space-xl);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.map-wrap iframe {
+  display: block;
+  width: 100%;
+  height: 380px;
+  border: none;
+  border-radius: 16px;
+}
+
+/* Botón "Abrir en Google Maps" debajo del mapa */
+.map-cta {
+  align-self: center;
+  gap: var(--space-xs);
+}
+
+@media (max-width: 767px) {
+  .map-wrap iframe {
+    height: 260px;
+  }
+}
